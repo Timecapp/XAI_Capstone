@@ -1,5 +1,9 @@
 # XAI_Capstone
-The repo for FourthBrain Capstone Industry Sponsored: "Explainability in Healthcare" from Samsung, to explore methods of breast cancer detection in whole slide histopathology images, with explainability.
+The repo for FourthBrain.AI Capstone Industry Sponsored: "Explainability in Healthcare" from Samsung, to explore methods of breast cancer detection in whole slide histopathology images, with explainability.
+
+Team Members:  Dr. Shaista Hussain & Mr. Pedram Emami
+Cohort:  MLE-10, 2022-2023
+
 
 
 Introduction
