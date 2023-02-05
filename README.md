@@ -95,7 +95,10 @@ Workflow
 
 
 Results
+We began the dataset exploration with the Samsung issued Canine Breast Histopathology dataset, which we realized did work on an image feature selection basis, but only complicated the black box issue as there required a translation of histopathological features between canine to human species.  We proceeded to establish a dataset source - which we did 2 of; the first with the Wisconsin Breast Cancer Dataset (csv) and the second with the BreakHis dataset (whole slide images).  We conducted EDA on both and then proceeded to run a baseline based on Yu Huang’s use of LIME to explain the image prediction results of a 2D Convolutional Neural Network (ConvNet) for the Invasive Ductal Carcinoma (Huang, 2020).  Once the explanation of the model prediction was obtained, we applied get_image_and_mask() to get the template image and the corresponding mask image (super pixels) showing the boundary of the area of the IDC image in yellow.  Then we applied a LIME image explainer to explain the IDC image prediction results of the 2D Convoluted Network model of Invasive Ductal Carcinoma of the breast from digital pathology slides.  Having completed this task and achieving 86.9% accuracy on image features and fulfilled LIME explainability, similar to the author’s results, we proceeded to run K fold logistic regression, and SVM on the BreakHis dataset and achieved a similar 86% accuracy in detection.  In our EDA we explored univariate, bi variate and multivariate analyses as well as used heat maps and correlation matrices to establish what we were getting right and wrong.  We then tried several models on the Wisconsin Breast Cancer Dataset and after EDA and baseline, we tried a Logistic Regression model with an accuracy of 97.6%,  Naive Bayes at 94%, and SVM much higher at 98.2%, and Random FOREST AT 94.7%, where the  Decision Tree training set accuracy was 0.99 and test set accuracy was 94.7%.   
+Then we tried to address the data imbalance, so we oversampled the minority class using the Synthetic Minority Oversampling Technique (SMOTE), and using Standard Scaler, and Log transformed skewed data, removed outliers with z-score, we achieved Random Forest accuracy is 96.3%, and successfully applied LIME, SHAP MOrris sensitivity partial sensitivity plots and gaussian ROC curves (0.99 AUC).
 
-Discussion
 
 Conclusions
+
+Deployment
