@@ -1,3 +1,4 @@
+
 # XAI_Capstone
 The repo for FourthBrain.AI Capstone Industry Sponsored: "Explainability in Healthcare" from Samsung, to explore methods of breast cancer detection in whole slide histopathology images, with explainability.
 
@@ -6,10 +7,10 @@ Cohort:  MLE-10, 2022-2023
 
 Presentation link: https://docs.google.com/presentation/d/1rI4byBdGlJn_1nwsFZLaZarMxek-hsHrtHivRO4l0WU/edit?usp=sharing
 
-Introduction
+# Introduction
 Diagnosing breast cancer requires a gold standard histopathological confirmation; conducted by a pathologist who microscopically visualizes dissected tissue. The analysis of the specimen results in a diagnosis and stage if positive, with a justification of observed findings.  AI models trained on object detection/segmentation tasks are currently used as a diagnostic tool, as they provide precise and consistent predictions. However, the explanations from these models, such as heatmaps, similar images and high level features, do not match those of an experienced pathologist. Explainable features that are suitable for histopathological image diagnosis need to be defined. The data annotations and choice of models needs to be designed to generate accurate diagnostic predictions with high quality explainable features. The annotation and explanation process involved could be more precise and consistent with accurate diagnostic algorithms that identify specific and measurable morphological abnormalities that reflect a carcinoma based on objective annotations.
 
-Key Research Questions
+# Key Research Questions
 We aim to address the following:
 Replicate state of the art explainable features (heat maps, similar images in training data, high level image features) for object detection/segmentation based prediction models, and identify suitability and limitations to histopathological images for cancer diagnosis.
 Implement other well known, model agnostic explainable features such as LIME and SHAP with histopathological images and determine suitability & limitations, to improve explainability on previous models, and satisfy physician and patient end-users.
@@ -18,7 +19,7 @@ Does increasing a training data set size and any other factors in dataset/annota
 (optional) Explore use of anomaly detection and/or graph neural networks instead of object detection/segmentation to improve accuracy of diagnosis and explainability.
 Perform detailed literature survey for the state-of-the-art techniques for explainability in histopathological images for breast cancer. 
 
-Datasets
+# Datasets
 1. The Wisconsin-Breast Cancer (Diagnostics) dataset (WBC) was downloaded from the UCI machine learning repository.
 It is a classification dataset, which records the measurements for breast cancer cases.
 There are two classes, benign and malignant.
@@ -51,7 +52,7 @@ dataset is divided into two main groups: benign tumors and malignant tumors. - b
 malignant lesion is locally destructive, invasive and metastasizes.
 DISTRIBUTION Train 80% Test 20%
 
-FORMAT
+# FORMAT
 
 image filenames store information about: method of biopsy procedure, tumor class, tumor type, patient identification, and magnification factor.
 
@@ -61,7 +62,7 @@ Format of image file name is given by the following BNF notation:
 
 ---- ::=UNDER ::=M|B ::=< BENIGN_TYPE>| ::=A|F|PT|TA ::=DC|LC|MC|PC ::= ::= ::= ::=40|100|200|400 ::=| ::= ::| ::=0|1|…|9 ::=A|B|…|Z
 
-Methodology
+# Methodology
 - In our model, the images (Whole Slide Image or WSI) are digitally produced by "Whole Slide Scanners" which are then to be annotated independantly by histopathologists to mark the Regions of Interest. If there is a difference between annotated information amongst the histopathologists, the slide is then send to another expert for review.
 
 Machine learning transformations could include colourings and hues in the image datasets, segmentation and others.
@@ -70,11 +71,11 @@ The slices are marked as 'Blank' or NoN-IDC, or as a Region of Interest.
 Blanks are discarded; Non-IDC or ROI slices are then fed into the models and a final model is then used to predict the validation data.
 The aggregated model is also for xAI (explainability).
 
-- WBC Models & Baseline Comparison
+# WBC Models & Baseline Comparison
 
 CNN / Keras https://www.kaggle.com/code/luckyapollo/predict-idc-in-breast-cancer-histology-images/edit
 
-Huang, Y (2020). Wisconsin Dataset . https://towardsdatascience.com/explainable-deep-learning-in-breast-cancer-prediction-ae36c638d2a4 used LIME
+# Huang, Y (2020). Wisconsin Dataset . https://towardsdatascience.com/explainable-deep-learning-in-breast-cancer-prediction-ae36c638d2a4 used LIME
 
 to explain the IDC image prediction results of a 2D ConvNet model in breast cancer diagnosis.
 Explanations of model prediction of both IDC and non-IDC were provided by setting the number of super-pixels/features (i.e., the num_features parameter in the method get_image_and_mask()) to 20.
@@ -91,14 +92,12 @@ Improve data visualization
 Optimize data augmentation
 Optimize NN architecture
 
-Workflow
+# Workflow
 
 
-Results
+# Results
 We began the dataset exploration with the Samsung issued Canine Breast Histopathology dataset, which we realized did work on an image feature selection basis, but only complicated the black box issue as there required a translation of histopathological features between canine to human species.  We proceeded to establish a dataset source - which we did 2 of; the first with the Wisconsin Breast Cancer Dataset (csv) and the second with the BreakHis dataset (whole slide images).  We conducted EDA on both and then proceeded to run a baseline based on Yu Huang’s use of LIME to explain the image prediction results of a 2D Convolutional Neural Network (ConvNet) for the Invasive Ductal Carcinoma (Huang, 2020).  Once the explanation of the model prediction was obtained, we applied get_image_and_mask() to get the template image and the corresponding mask image (super pixels) showing the boundary of the area of the IDC image in yellow.  Then we applied a LIME image explainer to explain the IDC image prediction results of the 2D Convoluted Network model of Invasive Ductal Carcinoma of the breast from digital pathology slides.  Having completed this task and achieving 86.9% accuracy on image features and fulfilled LIME explainability, similar to the author’s results, we proceeded to run K fold logistic regression, and SVM on the BreakHis dataset and achieved a similar 86% accuracy in detection.  In our EDA we explored univariate, bi variate and multivariate analyses as well as used heat maps and correlation matrices to establish what we were getting right and wrong.  We then tried several models on the Wisconsin Breast Cancer Dataset and after EDA and baseline, we tried a Logistic Regression model with an accuracy of 97.6%,  Naive Bayes at 94%, and SVM much higher at 98.2%, and Random FOREST AT 94.7%, where the  Decision Tree training set accuracy was 0.99 and test set accuracy was 94.7%.   
 Then we tried to address the data imbalance, so we oversampled the minority class using the Synthetic Minority Oversampling Technique (SMOTE), and using Standard Scaler, and Log transformed skewed data, removed outliers with z-score, we achieved Random Forest accuracy is 96.3%, and successfully applied LIME, SHAP MOrris sensitivity partial sensitivity plots and gaussian ROC curves (0.99 AUC).
 
 
-Conclusions
-
-Deployment
+# Deployment
