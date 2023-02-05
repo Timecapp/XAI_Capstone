@@ -93,6 +93,13 @@ Optimize data augmentation
 Optimize NN architecture
 
 # Workflow
+We started with the baseline for Wisconsin Breast Cancer DS: https://colab.research.google.com/drive/1HkO0OURdTIXPkscuydexVyDWOZ2Vz3yJ?usp=sharing
+
+Then the BreakHis DS baseline:
+https://colab.research.google.com/drive/1jouMB5NGG4zvkKGn-i-RTkXlPLmm7Eek?usp=sharing
+
+Then Wisconsin DS models: https://colab.research.google.com/drive/1s5x2IFtxgqB6jk98w3r5T3Hlntewf-Zm?usp=sharing
+Then BreakHis DS models: https://colab.research.google.com/drive/1t0NEbD4E_SgV94kNCRSML1V-trH_frS7?usp=sharing
 
 
 # Results
@@ -101,3 +108,4 @@ Then we tried to address the data imbalance, so we oversampled the minority clas
 
 
 # Deployment
+We are deploying via AWS 
