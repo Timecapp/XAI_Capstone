@@ -2,10 +2,10 @@
 # XAI_Capstone
 The repo for FourthBrain.AI Capstone Industry Sponsored: "Explainability in Healthcare" from Samsung, to explore methods of breast cancer detection in whole slide histopathology images, with explainability.
 
-Team Members:  Dr. Shaista Hussain & Mr. Pedram Emami
+Team Members:  Dr. Shaista Hussain 
 Cohort:  MLE-10, 2022-2023
 
-Presentation link: https://docs.google.com/presentation/d/1rI4byBdGlJn_1nwsFZLaZarMxek-hsHrtHivRO4l0WU/edit?usp=sharing
+Presentation link: https://docs.google.com/presentation/d/14g42ltbaDYPZCT4jt3FxGVHR6-ASqPaahX7BEANjrz4/edit?usp=sharing
 
 # Introduction
 Diagnosing breast cancer requires a gold standard histopathological confirmation; conducted by a pathologist who microscopically visualizes dissected tissue. The analysis of the specimen results in a diagnosis and stage if positive, with a justification of observed findings.  AI models trained on object detection/segmentation tasks are currently used as a diagnostic tool, as they provide precise and consistent predictions. However, the explanations from these models, such as heatmaps, similar images and high level features, do not match those of an experienced pathologist. Explainable features that are suitable for histopathological image diagnosis need to be defined. The data annotations and choice of models needs to be designed to generate accurate diagnostic predictions with high quality explainable features. The annotation and explanation process involved could be more precise and consistent with accurate diagnostic algorithms that identify specific and measurable morphological abnormalities that reflect a carcinoma based on objective annotations.
@@ -108,4 +108,4 @@ Then we tried to address the data imbalance, so we oversampled the minority clas
 
 
 # Deployment
-We are deploying via AWS 
+Hugging Face via Gradio
