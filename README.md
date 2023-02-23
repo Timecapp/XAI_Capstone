@@ -113,3 +113,22 @@ Model for BreakHis
 https://huggingface.co/spaces/LuckyApollo/BRCA_CNN_XAI 
 
 Model for Wisconsin BRCA https://huggingface.co/LuckyApollo/WiscBreastXAI
+
+Hugging Face Readme requirements
+---
+language: 
+  - "List of ISO 639-1 code for your language"
+  - lang1
+  - lang2
+thumbnail: "url to a thumbnail used in social sharing"
+tags:
+- tag1
+- tag2
+license: "any valid license identifier"
+datasets:
+- dataset1
+- dataset2
+metrics:
+- metric1
+- metric2
+---
