@@ -112,5 +112,4 @@ Hugging Face via Gradio
 Model for BreakHis 
 https://huggingface.co/spaces/LuckyApollo/BRCA_CNN_XAI 
 
-Model for Wisconsin BRCA 
-
+Model for Wisconsin BRCA https://huggingface.co/LuckyApollo/WiscBreastXAI
