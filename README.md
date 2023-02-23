@@ -109,3 +109,8 @@ Then we tried to address the data imbalance, so we oversampled the minority clas
 
 # Deployment
 Hugging Face via Gradio
+Model for BreakHis 
+https://huggingface.co/spaces/LuckyApollo/BRCA_CNN_XAI 
+
+Model for Wisconsin BRCA 
+
